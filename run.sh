@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /usr/bin/funcs.sh
+
 if [ -d "$TEMP_DIR" ]; then
   echo "Completing update, please wait..."
   cp -r $TEMP_DIR/* $SERVER_DIR/
@@ -16,6 +18,6 @@ if [ ! -f "$SERVER_DIR/$SERVER_EXECUTABLE" ]; then
   echo "Initial installation finished, launching server..."
 fi
 
-$SERVER_DIR/$SERVER_EXECUTABLE
+on_run
 
 exit 0

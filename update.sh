@@ -8,8 +8,8 @@ if pgrep $SERVER_EXECUTABLE &>/dev/null; then
   echo "Please restart the server after the update is complete to finish the installation"
 fi
 
-# PERFORM INSTALLATION INTO $INSTALL_DIR
-# APPID=0
-# steamcmd +login anonymous +force_install_dir $INSTALL_DIR +app_update $APPID validate +quit
+source /usr/bin/funcs.sh
+
+on_update
 
 exit 0
